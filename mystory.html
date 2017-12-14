@@ -1,0 +1,424 @@
+﻿<html>
+<head>
+<title>MY STORY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<style>
+.container img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+
+html, body { margin: 0 !important; padding: 0 !important }
+body{
+	font: sans-serif;
+	background-color: rgba(227, 150, 230, 0.863);
+	color:black;
+}
+
+img{
+	width:100%;height: auto;
+}
+.bgimg-1 {
+    background-image: url('아기.jpg');
+    min-height: 100%;
+     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1{
+        background-attachment: scroll;
+    }
+}
+carousel-caption {
+	background-color: black;
+	color:white;
+	text-align: center; 
+	padding:5px;
+}
+
+.topleft {
+	font: sans-serif;
+	background-color: rgb(227, 150, 230);
+	color: rgb(0, 0, 0);
+    position: absolute;
+    padding:5px;
+    top: 10px;
+    left: 25px;
+    font-size: 18px;
+}
+
+
+.topleft1 {
+	font: sans-serif;
+	background-color:white;
+	color: white;
+    position: absolute;
+    padding:5px;
+    top: -10px;
+    left: 25px;
+    font-size: 18px;
+}
+
+
+.wide {letter-spacing: 10px;}
+.hover-opacity {cursor: pointer;}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+background-color: black;
+  transition: 0.3s;
+  margin:20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e6e6e6;
+
+
+}
+.btn {
+	margin-top: 15px;
+}
+.row {
+	margin-bottom: 30px;
+}
+
+.navbar {
+      font-family: sans-serif;
+      background-color: #e6e6e6;
+      font-size: 15px !important;
+      letter-spacing: 3px;
+      opacity: 0.9;
+  }
+
+footer {
+	background:  #e6e6e6;
+	padding: 60px;
+}
+
+.column{
+  float:left;
+  width:25%;
+  padding:25px;
+ 
+}
+.column img {
+    opacity: 0.8; 
+    cursor: pointer;
+    width:70%; height:35% ;
+ 
+     
+    
+}
+.column img:hover {
+    opacity: 1;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container1 {
+    position: relative;
+    left:350px;
+    display: none;
+    
+}
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 1200px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.collapse{
+  color: white;
+}
+#expandedImg{
+  width:100%;
+  height:70%;
+}
+
+</style>
+</head>
+
+<body>
+ 
+<nav class="navbar navbar-default navbar-fixed-top">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#home"><span class="glyphicon glyphicon-plane"></span>story</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#Tour">소중한 추억</a></li>
+        <li><a href="#story">2017년 나의 스토리</a></li>
+        <li><a href="#ask">Ask</a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+    <li><a href="특별한 추억.html">특별한 추억</a></li>
+  </ul>
+</li>
+</div> 
+      
+        </ul>
+
+  </div>
+</div>
+</nav>
+
+<div class="bgimg-1" id="home">
+<div class="carousel-caption">
+	<h1>My Story</h1>
+        </div>      
+</div>
+
+ 
+<div class="container" id="Tour">
+<div class="row">
+
+<h2>소중한 추억</h2>
+<hr/>
+</div>
+</div>
+
+<div class="container" >
+
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div style="padding:20px">
+
+<img src="cent.jpg" class="img-rounded" alt="bigben">
+<div class="topleft">2살때</div>
+<button type="button" class="btn" data-toggle="collapse" data-target="#demo">Read More</button>
+  <div id="demo" class="collapse">
+
+    이 사진은 <strong>2살 때 </strong> 아빠, 엄마, 언니, 나 이렇게 네명이서 놀러를 갔다. 
+    어렷을 때 부모님과 많은 시간을 가졌다. 
+  </div>
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card">
+<div style="padding:20px">
+<img src="cent1.jpg" class="img-rounded" alt="Bridge">
+<div class="topleft">6살 때</div>
+<button type="button" class="btn" data-toggle="collapse" data-target="#demo1">Read More</button>
+  <div id="demo1" class="collapse">
+<strong>6 살때</strong> 저 사진은 내가 살던 아파트 앞에서 찍은 사진이다. 동생은 한살 이고, 꽃 앞에서 찍은 사진이다.
+  </div>
+ </div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div style="padding:20px">
+<img src="cent2.jpg" class="img-rounded" alt="London eye">
+<div class="topleft">7살 때</div>
+<button type="button" class="btn" data-toggle="collapse" data-target="#demo2">Read More</button>
+  <div id="demo2" class="collapse">
+<strong>7살 때</strong>  엄마 친구들이랑 같이 산에 놀러가서 찍은 사진이다. 저 때는 많이 통통한 편이였다. 
+  </div>
+ </div>
+ </div>
+</div>
+
+
+<div class="col-md-6">
+<div class="card">
+<div style="padding:20px">
+<img src="cent3.jpg" class="img-rounded" alt="westminten">
+<div class="topleft">9살 때</div>
+<button type="button" class="btn" data-toggle="collapse" data-target="#demo3">Read More</button>
+  <div id="demo3" class="collapse">
+<strong>9살 때 </strong>,할아버지랑 할머니랑 같이 동물원에 가서 구경하고 찍은 사진이다.  
+</div>
+ </div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+<br>
+<h2> &nbsp;&nbsp;&nbsp;&nbsp;2017년 나의 스토리</h2>
+<div class="row" id="story">
+
+  <div class="column">
+    <img src="bottom1.jpg" alt="친구들은 나랑 가장 친한 친구이다." style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="bottom2.jpg" alt="중국으로 교환학생 가기 전에 인천 공항에서<br/> 마지막 한국밥을 먹으면서 찍은 의미있는 사진이다." style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="bottom3.jpg" alt="중국교환학생으로 있으면서 많은 도움을 주었던 친구들이다.<br/> 같이 밥을 먹으러 갔다. " style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="bottom4.jpg" alt="한국에서 온 교환학생들끼리 백화점에 가서 구경한 날이다." style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+<div class="container1">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:40% ;">
+  <div id="imgtext"></div>
+</div>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<div class="container" id="ask">
+<div class="row">
+  <h2>Ask me</h2>
+  <hr/>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      
+     
+      <p><span class="glyphicon glyphicon-envelope"></span>Email : thgml3069@naver.com</p>
+    </div>
+    
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <br>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <button class="btn pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<footer class="text-center">
+  <a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p><strong>Power By</strong> JEON SO HEE</a></p> 
+</footer>
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = " none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace("active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += "active";
+}
+
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+</body>
+</html>
